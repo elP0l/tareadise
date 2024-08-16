@@ -112,7 +112,6 @@ public class EmployeeTest  {
         assertEquals(expected, managerOtherCurrency.cs(), 0.01);
     }
     
-    //METODO calculateYearBonus()
     
     @Test
     public void testCalculateYearBonusWorkerUSD() {
@@ -133,7 +132,7 @@ public class EmployeeTest  {
     @Test
     public void testCalculateYearBonusWorkerOtherCurrency() {
         float expected = 386.0F * 0.95F;
-        assertEquals(expected, supervisoOtherCurrency.CalculateYearBonus(), 0.01);
+        assertEquals(expected, workerOtherCurrency.CalculateYearBonus(), 0.01);
     }
     @Test
     public void testCalculateYearBonusSupervisorOtherCurrency() {
