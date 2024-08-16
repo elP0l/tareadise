@@ -3,11 +3,9 @@ import static org.junit.Assert.assertEquals;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
-
 import org.junit.Test;
 import org.junit.Before;
-import org.junit.AssumeTrue;
-import org.junit.AssumeFalse;
+import org.junit.Assume;
 
 public class EmployeeTest  {
 	Date date = new Date();
@@ -33,8 +31,6 @@ public class EmployeeTest  {
         managerUSD = new Employee(2000, "USD", 0.20F, EmployeeType.Manager);
         managerOtherCurrency = new Employee(2000, "EUR", 0.20F, EmployeeType.Manager);
 	}
-	
-	//METODO cs()
 	@Test
 	public void testCsWorkerUSDPar() {
 		Assume.assumeTrue(month%2==0);
@@ -87,7 +83,7 @@ public class EmployeeTest  {
     @Test
     public void testCsSupervisorOtherCurrencyPar() {
     	Assume.assumeTrue(month%2==0);
-        float salarioAjustado = 1500 * 0.95F; // 
+        float salarioAjustado = 1500 * 0.95F; 
         float expected = salarioAjustado + 0.10F * 0.35F;
         assertEquals(expected, supervisoOtherCurrency.cs(), 0.01);
     }
